@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "244170755924",
+    "project_id": "ecommerce-fdf84",
+    "storage_bucket": "ecommerce-fdf84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:244170755924:android:641455158447d2e586c2c1",
+        "android_client_info": {
+          "package_name": "com.brhah.optima"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblyFohuTHHGhT7RHguHakjbF21py69Dg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
