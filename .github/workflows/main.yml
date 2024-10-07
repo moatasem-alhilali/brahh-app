@@ -19,10 +19,12 @@ jobs:
         java-version: '11'  # يمكنك تغيير الإصدار بناءً على حاجة المشروع
 
     - name: Install dependencies
-      run: chmod +x ./gradlew && ./gradlew dependencies  # منح الأذونات اللازمة لـ gradlew ثم تثبيت التبعيات
+      run: chmod +x ./app/gradlew && ./app/gradlew dependencies
+  # منح الأذونات اللازمة لـ gradlew ثم تثبيت التبعيات
 
     - name: Build APK
-      run: chmod +x ./gradlew && ./gradlew assembleDebug  # منح الأذونات اللازمة لـ gradlew ثم بناء APK
+      run: chmod +x ./app/gradlew && ./app/gradlew dependencies
+  # منح الأذونات اللازمة لـ gradlew ثم بناء APK
 
     - name: Upload APK
       uses: actions/upload-artifact@v3  # استخدام الإصدار الأحدث (v3)
