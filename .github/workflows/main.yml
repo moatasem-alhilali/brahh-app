@@ -25,7 +25,7 @@ jobs:
       run: ./gradlew assembleDebug  # يقوم ببناء ملف APK
 
     - name: Upload APK
-      uses: actions/upload-artifact@v2  # يقوم برفع ملف APK كبنية (artifact)
+      uses: actions/upload-artifact@v3  # استخدام الإصدار الأحدث (v3)
       with:
         name: app-debug.apk
         path: app/build/outputs/apk/debug/app-debug.apk  # المسار الافتراضي للـ APK
