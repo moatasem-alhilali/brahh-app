@@ -1,0 +1,33 @@
+name: Android APK Build
+
+on:
+  push:
+    branches:
+      - main  # يقوم بتشغيل العملية عند التغيير في الفرع الرئيسي
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # تشغيل العملية على خادم Ubuntu
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # يقوم بتنزيل المشروع من GitHub
+
+    - name: Set up JDK
+      uses: actions/setup-java@v1  # إعداد Java Development Kit (JDK)
+      with:
+        java-version: '11'  # يمكنك تغيير الإصدار بناءً على حاجة المشروع
+
+    - name: Install dependencies
+      run: chmod +x ./app/gradlew && ./app/gradlew dependencies
+  # منح الأذونات اللازمة لـ gradlew ثم تثبيت التبعيات
+
+    - name: Build APK
+      run: chmod +x ./app/gradlew && ./app/gradlew dependencies
+  # منح الأذونات اللازمة لـ gradlew ثم بناء APK
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v3  # استخدام الإصدار الأحدث (v3)
+      with:
+        name: app-debug.apk
+        path: app/build/outputs/apk/debug/app-debug.apk  # المسار الافتراضي للـ APK
